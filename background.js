@@ -7,7 +7,7 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log(document.location.host);
      chrome.declarativeContent.onPageChanged.addRules([{
        conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostEquals: 'www.w3schools.com'},
+          pageUrl: {},
         })
         ],
            actions: [new chrome.declarativeContent.ShowPageAction()]
