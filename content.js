@@ -10,36 +10,30 @@ let name = "";
 let fullurl = "";
 
 function fakeCheck(){
-
+  let val = "high";
   urls.forEach(url => {
     name = fullname.replace("www\.", "");
     fullurl = (url).toLowerCase();
     if(name == fullurl){
-    elementsInsideBody.forEach(element => {
-      element.childNodes.forEach(child =>{
-        if(child.nodeType === 3){
-          replaceText(child, "FAKE");
-          
-        }
-      });
-
-    });
-
-  }
+      val = "low";
+    }
   });
 
-
-
-
-
-
+  setThermometer(val);
 
 
 }
 
+function setThermometer(value){
+  chrome.storage.sync.set({reliabilty: value}, function() {
+          console.log('Value is set to ' + value);
+        });
+}
+
+
 function replaceText (node, text) {
   let value = node.nodeValue;
-  value = value.replace(/the/gi, text);
+  value = value.replace(/Chrome/gi, text);
   value = value.replace(/The/gi, text);
   node.nodeValue = value;
 }
