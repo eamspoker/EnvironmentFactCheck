@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({reliabilty: 'high'}, function() {
+  chrome.storage.sync.set({reliabilty: 'unset'}, function() {
     console.log("reliabilty is high");
   });
 

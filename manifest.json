@@ -4,14 +4,6 @@
   "name": "Environment checker",
   "version": "0.0.0",
   "description": "Checks fake news about the environments",
-  "content_scripts": [
-    {
-    "matches": ["*://*/*"],
-    "js": ["content.js"],
-    "run_at":"document_end"
-
-  }
-],
 
 "permissions": ["storage", "declarativeContent", "activeTab"],
 
