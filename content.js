@@ -9,14 +9,16 @@ var fullname = document.location.host;
 var name = "";
 var fullkey = "";
 
-var val = "high " + fullname;
+var val = "Medium";
+setColor("yellow");
 
 function fakeCheck(){
   fakes.forEach(fake => {
     name = fullname.replace("www\.", "");
     fullkey = (fake).toLowerCase();
     if(name == fullkey){
-      val = "low " + fullname;
+      val = "Very Low";
+      setColor("red");
     }
   });
   if(name.match(/\./) != null){
@@ -36,13 +38,41 @@ function setThermometer(value){
         });
 }
 
+function setColor(value){
+  if(value == "red"){
+  chrome.storage.sync.set({['color']: '#c63039'}, function() {
+          console.log('Value is set to ' + value);
+        });
+  } else if(value == "yellow") {
+  chrome.storage.sync.set({['color']: '#f9d164'}, function() {
+          console.log('Value is set to ' + value);
+        });
+  } else if(value == "green"){
+    chrome.storage.sync.set({['color']: '#7cb754'}, function() {
+            console.log('Value is set to ' + value);
+          });
+  }
+}
+
+function incrementPoints(name){
+  console.log("YYYYEEE");
+  chrome.storage.sync.get(['points'], function(value) {
+        var newPoints = value.points + 1;
+        chrome.storage.sync.set({['points']: newPoints}, function() {
+                  console.log('Value is set');
+              });
+        });
+}
+
 function goodCheck(){
   goods.forEach(good => {
     name = fullname.replace("www\.", "");
     fullkey = (good).toLowerCase();
     fullkey = fullkey.replace("www\.", "");
     if(name == fullkey){
-      val = "veryHigh " + fullname;
+      val = "Very High";
+      incrementPoints();
+      setColor("green");
     }
   });
   if(name.match(/\./) != null){

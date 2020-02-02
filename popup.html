@@ -18,9 +18,10 @@
         background-color: #80bb5c;
       }
 
-      #reliabilty{
+      #thermometer{
         outline-color: white;
       }
+
     </style>
   </head>
   <link rel="stylesheet" href="css/patternfly.css">
@@ -33,6 +34,7 @@
       <img src="images/logo.png" width= "50px" alt="Logo"/>
     </div>
     <div class="pf-c-card__actions">
+      <button class="pf-c-button pf-m-primary" id="awayButton">Visit Our Website</button>
       <div class="pf-c-dropdown">
         <ul class="pf-c-dropdown__menu" aria-labelledby="card-action-example-1-dropdown-kebab-right-aligned-button" hidden>
           <li>
@@ -56,12 +58,24 @@
 
     </div>
   </div>
-  <div class="pf-c-card__header pf-c-title pf-m-md" id="card-action-example-1-check-label">Fake News Detector</div>
-  <div class="pf-c-card__body"><p id="thermometer">Reliability: </p></div>
+  <div class="pf-c-card__header pf-c-title pf-m-md" id="card-action-example-1-check-label">
+
+
+    <div class="pf-l-level">
+  <div class="pf-l-level__item"><h1>Fake News Detector</h1></div>
+  <div class="pf-l-level__item" id="pointDisplay">Points: (Refresh)</div>
+</div>
+
+  </div>
+  <div class="pf-c-card__body">
+  <div class="pf-l-stack pf-m-gutter">
+  <div class="pf-l-stack__item" id="thermometer"><p>Reliability: </p></div>
+  <div class="pf-l-stack__item pf-m-fill"><p id="description"></p></div>
+  </div>
+</div>
   <div class="pf-c-card__footer">
     <div class="pf-l-level">
-  <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" id="goButton">Scan</button></div>
-  <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" id="awayButton">Visit Our Website</button></div>
+  <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" id="goButton">Check Page</button></div>
   <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" type="button" id="link">
     Login
   </button></div>
@@ -69,9 +83,15 @@
 
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src="unreliable.json.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
 <script type="text/javascript" src="content.js"></script>
+<script type="text/javascript" src="signin.js"></script>
 <script type="text/javascript" src="popup.js"></script>
 
 </div>

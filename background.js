@@ -3,6 +3,15 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("reliabilty is high");
   });
 
+  chrome.storage.sync.set({color: '#ffffff'}, function() {
+    console.log("Color is white!");
+  });
+
+  chrome.storage.sync.set({points: 0}, function() {
+    console.log("Points are zero!");
+  });
+
+
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     console.log(document.location.host);
      chrome.declarativeContent.onPageChanged.addRules([{
