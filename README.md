@@ -39,11 +39,11 @@ This script interacts with the webpage the user is on. It parses the url of the 
 
 This script navigates away from the page the user is currently on, and to our [website](eamspoker.github.io/Fakenewsdetector), which is hosted on Github pages, and is also available on [a public repository](https://github.com/eamspoker/Fakenewsdetector).
 
-## images/
+## /images
 
 This folder contains all of our image resources, including favicons and logos.
 
-## css/
+## /css
 
 This folder contains the style resources and assets from Patternfly.
 
