@@ -8,11 +8,19 @@
         outline: none;
       }
 
-      #goButton {
+      #goButton, #awayButton {
         outline: none;
         background-color: #80bb5c;
       }
 
+      #link{
+        outline: none;
+        background-color: #80bb5c;
+      }
+
+      #reliabilty{
+        outline-color: white;
+      }
     </style>
   </head>
   <link rel="stylesheet" href="css/patternfly.css">
@@ -26,9 +34,6 @@
     </div>
     <div class="pf-c-card__actions">
       <div class="pf-c-dropdown">
-        <button class="pf-c-dropdown__toggle pf-m-plain" type="button" id="card-action-example-1-dropdown-kebab-right-aligned-button" aria-expanded="false" aria-label="Actions">
-          <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
-        </button>
         <ul class="pf-c-dropdown__menu" aria-labelledby="card-action-example-1-dropdown-kebab-right-aligned-button" hidden>
           <li>
             <a class="pf-c-dropdown__menu-item" href="#">Link</a>
@@ -48,14 +53,26 @@
           </li>
         </ul>
       </div>
-      <input type="checkbox" id="card-action-example-1-check" name="card-action-example-1-check" aria-labelledby="card-action-example-1-check-label" />
+
     </div>
   </div>
-  <div class="pf-c-card__header pf-c-title pf-m-md" id="card-action-example-1-check-label">Header</div>
+  <div class="pf-c-card__header pf-c-title pf-m-md" id="card-action-example-1-check-label">Fake News Detector</div>
   <div class="pf-c-card__body"><p id="thermometer">Reliability: </p></div>
-  <div class="pf-c-card__footer"><button class="pf-c-button pf-m-primary" id="goButton">Scan</button></div>
+  <div class="pf-c-card__footer">
+    <div class="pf-l-level">
+  <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" id="goButton">Scan</button></div>
+  <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" id="awayButton">Visit Our Website</button></div>
+  <div class="pf-l-level__item"><button class="pf-c-button pf-m-primary" type="button" id="link">
+    Login
+  </button></div>
+</div>
+
+  </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="unreliable.json.js"></script>
+<script type="text/javascript" src="content.js"></script>
 <script type="text/javascript" src="popup.js"></script>
+
 </div>
 </html>

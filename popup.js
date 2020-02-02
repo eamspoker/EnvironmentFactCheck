@@ -1,5 +1,6 @@
 var goButton = document.getElementById('goButton');
 var thermometer = document.getElementById('thermometer');
+var awayButton = document.getElementById('awayButton');
 var counter = 0;
 function getThermometer(){
   chrome.storage.sync.get(['reliabilty'], function(value) {
@@ -9,7 +10,6 @@ function getThermometer(){
 }
 
 goButton.onclick = function(element) {
-  console.log("clicked!")
   if(counter == 0){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
@@ -36,3 +36,17 @@ goButton.onclick = function(element) {
 
 
  };
+
+ awayButton.onclick = function(element) {
+     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+     chrome.tabs.executeScript(
+          tabs[0].id,
+          {file: "navigate.js"});
+    });
+
+
+
+
+
+
+  };
