@@ -6,7 +6,7 @@ A chrome browser extension that helps you become better informed about the envir
 
 ### Why did we make it?
 
-We want to create a more environmentally concious society in today's era of misinformation. This starts by making it easier for everyone to choose reliable sources!
+We want to create a more environmentally conscious society in today's era of misinformation. This starts by making it easier for everyone to choose reliable sources!
 
 
 ### Who are we and where did we make it?
