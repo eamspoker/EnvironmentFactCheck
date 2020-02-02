@@ -13,10 +13,10 @@ We want to create a more environmentally conscious society in today's era of mis
 
 We made it for TechTogetherBoston2020, a hackathon for women and non-binary hackers. Our team had 4 members:
 
-      - Deanna Castano
-      - Tanishka Porwal
-      - Lindsay Penkrat
       - Emily Amspoker
+      - Deanna Castano
+      - Lindsay Penkrat
+      - Tanishka Porwal
       
 
 # File breakdowns
@@ -54,5 +54,45 @@ This folder contains all of our image resources, including favicons and logos.
 ### /css
 
 This folder contains the style resources and assets from Patternfly.
+
+
+
+# Reference Images/Sources
+
+
+### Popup.js and Popup.html images
+
+![alt text](/ReadmeRes/low.png)
+
+A fake news website is indicated by a red banner.
+
+![alt text](/ReadmeRes/medium.png)
+
+A yellow banner indicates a website that does not strongly spread information about the environment, whether in a truthful or mendacious manner.
+
+![alt text](/ReadmeRes/high.png)
+
+A green banner shows that this website is reliable and recommended for research in terms of the environment.
+
+### Resources
+
+[List of fake news websites](https://www.factcheck.org/2017/07/websites-post-fake-satirical-stories/)
+[List of reliable environmental science websites](https://publichealthonline.gwu.edu/blog/sources-for-climate-news/)
+
+
+# Reflections
+
+## Bugs + Future Expansion
+
+It was difficult to interact with both the webpage and the popup window at the same time, especially since it meant that these two pages had different consoles, making it harder to debug. Because of how the window updates, the points for reading reliable sources were also a problem, as sometimes they would not increment at all, or increment by twos because the incrementing function was called in two different files.
+
+
+We have a lot of ideas for the future, some of which include:
+
+- A point counter that automatically reloads
+- Having a login/scoreboard feature
+- Larger lists/datasets of websites
+- Having a customizable pop-up window
+- A wider range of reliability values (i.e. if they're reliable but biased because they're funded by certain companies, etc.)
 
 
