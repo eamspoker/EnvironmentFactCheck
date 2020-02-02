@@ -9,6 +9,7 @@ function getThermometer(){
 }
 
 goButton.onclick = function(element) {
+  console.log("clicked!")
   if(counter == 0){
     thermometer.textContent = "Reliability: ";
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
