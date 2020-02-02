@@ -11,6 +11,7 @@ var fullkey = "";
 
 var val = "Medium";
 setColor("yellow");
+setDescription(fullname + " is neither recommended nor disapproved for environmental issues.");
 
 function fakeCheck(){
   fakes.forEach(fake => {
@@ -19,6 +20,7 @@ function fakeCheck(){
     if(name == fullkey){
       val = "Very Low";
       setColor("red");
+      setDescription(name + " purposefully publishes fake information. It is highly DISCOURAGED to research or believe this site.");
     }
   });
   if(name.match(/\./) != null){
@@ -34,6 +36,13 @@ function fakeCheck(){
 
 function setThermometer(value){
   chrome.storage.sync.set({['reliabilty']: value}, function() {
+          console.log('Value is set to ' + value);
+        });
+}
+
+
+function setDescription(value){
+  chrome.storage.sync.set({['description']: value}, function() {
           console.log('Value is set to ' + value);
         });
 }
@@ -54,15 +63,6 @@ function setColor(value){
   }
 }
 
-function incrementPoints(name){
-  console.log("YYYYEEE");
-  chrome.storage.sync.get(['points'], function(value) {
-        var newPoints = value.points + 1;
-        chrome.storage.sync.set({['points']: newPoints}, function() {
-                  console.log('Value is set');
-              });
-        });
-}
 
 function goodCheck(){
   goods.forEach(good => {
@@ -71,8 +71,8 @@ function goodCheck(){
     fullkey = fullkey.replace("www\.", "");
     if(name == fullkey){
       val = "Very High";
-      incrementPoints();
       setColor("green");
+      setDescription(name + " is considered an accurate and reliable source of environmental information.");
     }
   });
   if(name.match(/\./) != null){

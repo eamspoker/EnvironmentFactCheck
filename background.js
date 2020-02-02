@@ -11,6 +11,13 @@ chrome.runtime.onInstalled.addListener(function() {
     console.log("Points are zero!");
   });
 
+  chrome.storage.sync.set({description: ""}, function() {
+    console.log("Description is blank!");
+  });
+
+
+
+
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     console.log(document.location.host);

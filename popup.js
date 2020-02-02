@@ -3,12 +3,24 @@ var thermometer = document.getElementById('thermometer');
 var awayButton = document.getElementById('awayButton');
 var pointDisplay = document.getElementById("pointDisplay");
 var points = document.getElementById("points");
+var descriptionElem = document.getElementById("description");
 var counter = 0;
 var claimed = false;
 
 function getThermometer(){
   chrome.storage.sync.get(['reliabilty'], function(value) {
           thermometer.textContent = "Reliability: " + value.reliabilty;
+          if(!claimed && value.reliabilty == "Very High"){
+            incrementPoints();
+            claimed = true;
+          }
+        });
+
+}
+
+function getDescription(){
+  chrome.storage.sync.get(['description'], function(value) {
+          descriptionElem.textContent = value.description;
         });
 
 }
@@ -23,11 +35,16 @@ function getColor(){
 
 function getPoints(){
   chrome.storage.sync.get(['points'], function(value) {
-          if(value.points == 0){
           pointDisplay.textContent = "Points: " + value.points;
-        } else{
-          pointDisplay.textContent = "Points: " + (value.points -1);
-        }
+        });
+}
+
+function incrementPoints(){
+  chrome.storage.sync.get(['points'], function(value) {
+        var newPoints = value.points + 1;
+        chrome.storage.sync.set({['points']: newPoints}, function() {
+                  console.log('Value is set');
+              });
         });
 }
 
@@ -49,14 +66,13 @@ goButton.onclick = function(element) {
          {file: "content.js"});
    });
 
+   getDescription();
    getThermometer();
    getColor();
-   getPoints();
-   goButton.textContent = "Scan";
+
+   goButton.textContent = "Check Page";
    counter = 0;
 }
-
-
 
 
 
@@ -69,8 +85,5 @@ goButton.onclick = function(element) {
           {file: "navigate.js"});
     });
 };
-
-
-
 
 window.onload = getPoints();
