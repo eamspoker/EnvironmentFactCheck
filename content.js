@@ -28,6 +28,10 @@ function fakeCheck(){
 
 }
 
+$.getJSON("unreliable.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+});
+
 function setThermometer(value){
   chrome.storage.sync.set({['reliabilty']: value}, function() {
           console.log('Value is set to ' + value);

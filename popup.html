@@ -2,16 +2,60 @@
 <html>
   <head>
     <style>
-      button {
-        height: 60px;
-        width: 60px;
+      #screen {
+        height: 300px;
+        width: 600px;
         outline: none;
       }
+
+      #goButton {
+        outline: none;
+        background-color: #80bb5c;
+      }
+
     </style>
   </head>
+  <link rel="stylesheet" href="css/patternfly.css">
   <body>
-    <button id="goButton">Scan</button>
-    <p id="thermometer">Reliability: </p>
-    <script type="text/javascript" src="popup.js"></script>
-  </body>
+
+    <div id="screen">
+    <div class="pf-c-card" id="card-action-example-1">
+  <div class="pf-c-card__head">
+    <div class="pf-c-card__head-main">
+      <img src="images/logo.png" width= "50px" alt="Logo"/>
+    </div>
+    <div class="pf-c-card__actions">
+      <div class="pf-c-dropdown">
+        <button class="pf-c-dropdown__toggle pf-m-plain" type="button" id="card-action-example-1-dropdown-kebab-right-aligned-button" aria-expanded="false" aria-label="Actions">
+          <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+        </button>
+        <ul class="pf-c-dropdown__menu" aria-labelledby="card-action-example-1-dropdown-kebab-right-aligned-button" hidden>
+          <li>
+            <a class="pf-c-dropdown__menu-item" href="#">Link</a>
+          </li>
+          <li>
+            <button class="pf-c-dropdown__menu-item" type="button">Action</button>
+          </li>
+          <li>
+            <a class="pf-c-dropdown__menu-item pf-m-disabled" href="#" aria-disabled="true" tabindex="-1">Disabled link</a>
+          </li>
+          <li>
+            <button class="pf-c-dropdown__menu-item" type="button" disabled>Disabled action</button>
+          </li>
+          <li class="pf-c-dropdown__separator" role="separator"></li>
+          <li>
+            <a class="pf-c-dropdown__menu-item" href="#">Separated link</a>
+          </li>
+        </ul>
+      </div>
+      <input type="checkbox" id="card-action-example-1-check" name="card-action-example-1-check" aria-labelledby="card-action-example-1-check-label" />
+    </div>
+  </div>
+  <div class="pf-c-card__header pf-c-title pf-m-md" id="card-action-example-1-check-label">Header</div>
+  <div class="pf-c-card__body"><p id="thermometer">Reliability: </p></div>
+  <div class="pf-c-card__footer"><button class="pf-c-button pf-m-primary" id="goButton">Scan</button></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+</div>
 </html>

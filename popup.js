@@ -11,12 +11,12 @@ function getThermometer(){
 goButton.onclick = function(element) {
   console.log("clicked!")
   if(counter == 0){
-    thermometer.textContent = "Reliability: ";
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
          tabs[0].id,
          {file: "content.js"});
    });
+   thermometer.textContent = "Reliability: ";
    goButton.textContent = "Show Results";
    counter += 1;
 } else{
